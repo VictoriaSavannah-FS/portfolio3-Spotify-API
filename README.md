@@ -1,4 +1,4 @@
-# portfolio3-Spotify-API
+# Portfolio3-Spotify-API
 --- 
 
 ## Project Overview | 
