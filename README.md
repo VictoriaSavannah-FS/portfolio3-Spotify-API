@@ -1,4 +1,4 @@
-# Portfolio3-Spotify-API
+# Spotify-2GO | API
 --- 
 
 ## Project Overview | 
