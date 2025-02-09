@@ -24,15 +24,15 @@ Homebrew Install
 
 Install necessary "Xcode command-line tools from Apple's Xcode 
 
-    `xcode-select --install`
+`xcode-select --install`
 
 Download official Homebrew formula for MongoDB  
 
-  `brew tap mongodb/brew`
+`brew tap mongodb/brew`
 
 Ensures Homebrew and all otehr forumulae are up to date
 
-  `brew update`
+`brew update`
  
 Install MonogoDB 
 
@@ -40,6 +40,7 @@ Install MonogoDB
 
 2. Start the Server
    > To Run / Start MonogoDB | `mongod` process
+   
  `brew services start mongodb-community@8.0`
 
    > To Stop MonogDB | `mongod` process
