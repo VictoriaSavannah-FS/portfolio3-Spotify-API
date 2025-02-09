@@ -32,7 +32,7 @@ Download official Homebrew formula for MongoDB
 
 Ensures Homebrew and all otehr forumulae are up to date
 
-   `brew update
+`brew update`
  
 Install MonogoDB 
 
@@ -47,7 +47,7 @@ Install MonogoDB
 
 `brew services stop mongodb-community@8.0`
 
-5. 
+3. Start the Front-end
 
 
 ## Links 
