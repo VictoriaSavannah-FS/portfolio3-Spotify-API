@@ -29,3 +29,14 @@
 - link 1 <placeholder>
 - link 2 <placeholder>
 - link 3 <placeholder>
+### Resources | References
+
+> MEVN Stack Tutorial | Build a CRUD app using Vue 3, Node, Express & MongoDB
+- https://signoz.io/blog/mevn-stack-tutorial/
+
+> **Kickstarting Your Full-Stack Journey with React, Vite, and Expres**
+- https://www.joelspriggs.com/kickstarting-your-full-stack-journey-with-react-vite-and-express/
+> My current FrontEnd Stack — React, Vite, Mantine, Tanner-query, react-hook-form & Typescript
+- https://adam-drake-frontend-developer.medium.com/my-current-frontend-stack-react-vite-mantine-tanner-query-react-hook-form-typescript-fae33c67f77e
+> Vite Docs | Getting Started
+- https://vite.dev/guide/
