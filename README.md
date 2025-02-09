@@ -7,10 +7,13 @@
 
 ## Pre-requisites | 
 
-### This section of your README file should list out all of the software requirements your project needs to run (E.g browser version, NodeJS version, etc)
+### Ensure you have the latest version of MonogoDB by updating Homebrew from your terminal and ensure you isntall adn run the needed dependencies. Reference the step by step **Getting Started** section. 
 
 ## Getting Started
-### The Getting Started section of any README file normally contains all of the instructions for a developer to get a working version of your project up and running. 
+
+### Follow along and install the following necessary dependencies to get a working version of this project up and running. 
+
+
 ### Let's Get This Up & Running | Follow these Steps: 
 
 1. Install Homebrew if you haven't done so already. Then, use Homebrew to install MonogoDB.
@@ -35,6 +38,15 @@ Install MonogoDB
 
    > `brew install mongodb-community@8.0`
 
+2. To Run / Start MonogoDB | `mongod` process
+
+> `brew services start mongodb-community@8.0`
+
+4. To Stop MonogDB | `mongod` process
+
+>`brew services stop mongodb-community@8.0`
+
+5. 
 
 
 ## Links 
@@ -48,9 +60,19 @@ Install MonogoDB
 > MEVN Stack Tutorial | Build a CRUD app using Vue 3, Node, Express & MongoDB
 - https://signoz.io/blog/mevn-stack-tutorial/
 
+
 > **Kickstarting Your Full-Stack Journey with React, Vite, and Expres**
 - https://www.joelspriggs.com/kickstarting-your-full-stack-journey-with-react-vite-and-express/
+
+
 > My current FrontEnd Stack — React, Vite, Mantine, Tanner-query, react-hook-form & Typescript
 - https://adam-drake-frontend-developer.medium.com/my-current-frontend-stack-react-vite-mantine-tanner-query-react-hook-form-typescript-fae33c67f77e
+
+
 > Vite Docs | Getting Started
 - https://vite.dev/guide/
+
+> MERN Stack Explained
+- https://www.mongodb.com/resources/languages/mern-stack
+
+- 
