@@ -16,33 +16,32 @@
 
 ### Let's Get This Up & Running | Follow these Steps: 
 
-1. Install Homebrew if you haven't done so already. Then, use Homebrew to install MonogoDB.
+1. Install Homebrew if you haven't done so already. Then, use Homebrew to install MongoDB.
 
 Homebrew Install
 
-   `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+	`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
 Install necessary "Xcode command-line tools from Apple's Xcode 
 
-`xcode-select --install`
+	`xcode-select --install`
 
 Download official Homebrew formula for MongoDB  
 
-`brew tap mongodb/brew`
+   `brew tap mongodb/brew`
 
-Ensures Homebrew and all otehr forumulae are up to date
-
-\`brew update`
-
+Ensures Homebrew and all otehr formulae are up to date
+    
+    `brew update`
  
 Install MonogoDB 
 
     `brew install mongodb-community@8.0`
 
 2. Run `npm init`
-3. Install the dev dependencies:
-
-   `npm i express mongoose path cors dotenv nodemon`
+Install the dev dependencies:
+	
+ 		`npm i express mongoose path cors dotenv nodemon`
    
    >Express: to help manage our server
    >Mongoose: help manage our connections to Mongo database
