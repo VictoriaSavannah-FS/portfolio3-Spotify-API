@@ -13,8 +13,8 @@
 ### The Getting Started section of any README file normally contains all of the instructions for a developer to get a working version of your project up and running. 
 ### Let's Get This Up & Running | Follow these Steps: 
 
-1. First item
-   `code`
+1. Use Homebrew to install MonogoDB
+   `xcode-select --install`
 2. Second item
    `code`
 3. Third item
