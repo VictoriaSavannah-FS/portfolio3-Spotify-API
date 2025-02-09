@@ -28,7 +28,7 @@ Install necessary "Xcode command-line tools from Apple's Xcode
 
 Download official Homebrew formula for MongoDB  
 
-   `brew tap mongodb/brew`
+  	 `brew tap mongodb/brew`
 
 Ensures Homebrew and all otehr formulae are up to date
     
