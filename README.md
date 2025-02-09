@@ -7,7 +7,7 @@
 
 ## Pre-requisites | 
 
-### Ensure you have the latest version of MonogoDB by updating Homebrew from your terminal and ensure you isntall adn run the needed dependencies. Reference the step by step **Getting Started** section. 
+> Ensure you have the latest version of MonogoDB by updating Homebrew from your terminal and ensure you isntall adn run the needed dependencies. Reference the step by step **Getting Started** section. 
 
 ## Getting Started
 
