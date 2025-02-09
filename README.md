@@ -36,7 +36,7 @@ Ensures Homebrew and all otehr forumulae are up to date
  
 Install MonogoDB 
 
-   > `brew install mongodb-community@8.0`
+    `brew install mongodb-community@8.0`
 
 2. To Run / Start MonogoDB | `mongod` process
 
