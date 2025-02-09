@@ -13,25 +13,29 @@
 ### The Getting Started section of any README file normally contains all of the instructions for a developer to get a working version of your project up and running. 
 ### Let's Get This Up & Running | Follow these Steps: 
 
-1. Install Homebrew if you haven't done so already. Then, use Homebrew to install MonogoDB.\
+1. Install Homebrew if you haven't done so already. Then, use Homebrew to install MonogoDB.
 
-Homebrew Isntall
+Homebrew Install
+
    > `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
 Install necessary "Xcode command-line tools from Apple's Xcode 
+
    > `xcode-select --install`
+
 Download official Homebrew formula for MongoDB  
+
    > `brew tap mongodb/brew`
-> Ensures Homebrew and all otehr forumulae are up to date
+
+Ensures Homebrew and all otehr forumulae are up to date
+
    > `brew update`
-> Install MonogoDB 
+ 
+Install MonogoDB 
+
    > `brew install mongodb-community@8.0`
-3. Second item
-   `code`
-4. Third item
-5. Fourth Item
-   `code`
-6. Fifth Item
-   `code`
+
+
 
 ## Links 
 ### Links to Project Sources  
