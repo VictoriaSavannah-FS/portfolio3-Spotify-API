@@ -38,7 +38,19 @@ Install MonogoDB
 
     `brew install mongodb-community@8.0`
 
-2. Start the Server
+2. Run `npm init`
+3. Install the dev dependencies:
+
+   `npm i express mongoose path cors dotenv nodemon`
+   
+   >Express: to help manage our server
+   >Mongoose: help manage our connections to Mongo database
+   >Path: to point to React Build
+   >CORS: helps our local development from different ports to avoid having cross origin issues.
+   >dotenv: contorl environemtn variabels
+   >nodemon: better development experience w/ou thaving to refresh our server constantly
+   
+5. Start the Server
    > To Run / Start MonogoDB | `mongod` process
    
  `brew services start mongodb-community@8.0`
