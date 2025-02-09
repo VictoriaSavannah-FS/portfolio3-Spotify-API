@@ -51,7 +51,8 @@ Install the dev dependencies:
    > - dotenv: contorl environemtn variabels
    > - Nodemon: better development experience w/ou thaving to refresh our server constantly
    
-5. Start the Server
+3. Start MonogDB
+
    > To Run / Start MonogoDB | `mongod` process
    	
 		`brew services start mongodb-community@8.0`
@@ -59,8 +60,10 @@ Install the dev dependencies:
    > To Stop MonogDB | `mongod` process
 
 		`brew services stop mongodb-community@8.0`
+4. Start Local Server:
 
-3. Start the Front-end
+   		`npm run dev`
+6. Start the Front-end
 
 
 ## Links 
