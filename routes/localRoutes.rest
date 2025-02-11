@@ -1,0 +1,14 @@
+ GET http://localhost:8000/artists
+
+### 
+
+ GET http://localhost:8000/artists/1234
+
+### 
+
+POST http://localhost:8000/artists/1234
+
+PATCH http://localhost:8000/artists/1234
+
+
+DELETE http://localhost:8000/artists/1234
