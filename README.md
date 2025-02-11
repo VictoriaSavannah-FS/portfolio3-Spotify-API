@@ -40,15 +40,16 @@ Install MonogoDB
 2. Run `npm init`
 Install the dev dependencies:
 
-	`npm i express mongoose path cors dotenv nodemon`
+	`npm i express mongoose path cors dotenv nodemon axios`
    
-   >
+   
    > - Express: to help manage our server
    > - Mongoose: help manage our connections to Mongo database
    > - Path: to point to React Build
    > - CORS: helps our local development from different ports to avoid having cross origin issues.
    > - dotenv: contorl environemtn variabels
    > - Nodemon: better development experience w/ou thaving to refresh our server constantly
+   > - Axios: Middleware that handles HTTP requests
    
 3. Start MonogDB
 
@@ -63,7 +64,7 @@ Install the dev dependencies:
 
    		`npm run dev`
 6. Start the Front-end
-
+		`placeholder`
 
 ## Links 
 ### Links to Project Sources  
