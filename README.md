@@ -1,9 +1,8 @@
-# Spotify-2GO | API
+# SpotifyX | API
 --- 
 
 ## Project Overview | 
-### [placeholder]This section of your README should contain the description of your project, features, and functionality. 
-
+### SpotifyX will be a simple Web-app that through the use of proper OAuth and JWT tokens, the user will be able to search their favorite artist and be giveen their artists' stats; from their picture, followers, Genres, and their current popularity. 
 
 ## Pre-requisites | 
 
@@ -69,7 +68,7 @@ Install the dev dependencies:
 ## Links 
 ### Links to Project Sources  
 
-- link 1 <placeholder>
+- local backend: http://localhost:8000
 - link 2 <placeholder>
 - link 3 <placeholder>
 ### Resources | References
@@ -92,4 +91,11 @@ Install the dev dependencies:
 > MERN Stack Explained
 - https://www.mongodb.com/resources/languages/mern-stack
 
-- 
+> Spotify | Great Reference Articles I used in my initial setup
+ - https://developer.spotify.com/documentation/web-api/concepts/api-calls#response-status-codes
+ - https://developer.spotify.com/documentation/web-api/reference/get-an-artist
+ - https://developer.spotify.com/documentation/web-api/concepts/access-token
+ - https://developer.spotify.com/documentation/web-api/tutorials/code-flow
+ - https://developer.spotify.com/documentation/web-api/tutorials/getting-started#request-an-access-token
+ - https://developer.spotify.com/documentation/web-api/reference/get-an-artist
+
