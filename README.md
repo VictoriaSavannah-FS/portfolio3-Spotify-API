@@ -2,7 +2,7 @@
 --- 
 
 ## Project Overview | 
-### SpotifyX will be a simple Web-app that through the use of proper OAuth and JWT tokens, the user will be able to search their favorite artist and be giveen their artists' stats; from their picture, followers, Genres, and their current popularity. 
+### SpotifyX will be a simple Web-app that through the use of proper OAuth and JWT tokens, the user will be able to search their favorite artist and be given their artists' stats; from their picture, followers, Genres, and their current popularity. 
 
 ## Pre-requisites | 
 
