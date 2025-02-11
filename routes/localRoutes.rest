@@ -1,14 +1,38 @@
- GET http://localhost:8000/artists
+GET http://localhost:8000/api/v1/artists
 
 ### 
 
- GET http://localhost:8000/artists/1234
+GET http://localhost:8000/api/v1/artist
 
 ### 
 
-POST http://localhost:8000/artists/1234
+POST http://localhost:8000/artists
+Content-Type: application/json
 
-PATCH http://localhost:8000/artists/1234
+{
+  "name": "Name - Test 1",
+  "genres": ["Pop", "Punk Rock", "Alternative"],
+  "popularity": "1234",
+  "followers": "10987",
+  "images": [],
+  "type": "Artist"
+}
 
+###
 
 DELETE http://localhost:8000/artists/1234
+
+
+###
+
+PATCH http://localhost:8000/artists/1234
+Content-Type: application/json
+
+{
+  "name": "Name - Test 1 - UPDATED EDITED",
+  "genres": ["Alternative"],
+  "popularity": "987",
+  "followers": "12345",
+  "images": ["imgSchema", "not sure yet ..."],
+  "type": "Artist"
+}

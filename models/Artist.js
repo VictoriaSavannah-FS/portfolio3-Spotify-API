@@ -39,14 +39,14 @@ const artistSchema = new mongoose.Schema({
     default: 0, //sets a default #
   },
   images: [imgSchema], //use img model from above
-  id: { type: String, required: true },
+  id: { type: String, required: false },
   type: {
     type: String,
-    required: true,
+    required: false,
   },
   uri: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 

@@ -44,12 +44,11 @@ router.get("/:id", getArtist, async (req, res) => {
 });
 
 // POST ------------
-router.post("/:id", async (req, res) => {
+router.post("/", async (req, res) => {
   const artist = new Artist({
     name: req.body.name,
     genres: req.body.genres,
     popularity: req.body.popularity,
-    id: req.body.id,
     images: req.body.images,
     followers: req.body.followers,
   });
