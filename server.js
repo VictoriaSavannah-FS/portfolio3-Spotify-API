@@ -29,6 +29,8 @@ db.once("open", () =>
 // mongoose.connect("mongodb://127.0.0.1:27017/spotifyx");
 
 // ROUTES -------------
+const authRouter = require("./routes/authRoutes"); // Import authRoutes
+app.use("/auth", authRouter); // use authRoutes
 
 const artistRouter = require("./routes/artistRoutes");
 // everytioes we go to base url --- artists
