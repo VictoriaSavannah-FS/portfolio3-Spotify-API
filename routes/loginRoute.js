@@ -1,4 +1,4 @@
-/**Exanple from Spotify docs
+/**Exanple from Spotify docs -- ONLY NOTES fpor reference 
 
 var express = require('express');
 var request = require('request');
@@ -17,6 +17,8 @@ const generateRandomString = (length) => {
   .toString('hex')
   .slice(0, length);
 }
+
+
 
 var stateKey = 'spotify_auth_state';
 
@@ -42,6 +44,8 @@ app.get('/login', function(req, res) {
       state: state
     }));
 });
+
+
 
 app.get('/callback', function(req, res) {
 

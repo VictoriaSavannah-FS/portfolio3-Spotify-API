@@ -2,7 +2,6 @@ const express = require("express");
 const axios = require("axios");
 require("dotenv").config();
 const userToken = require("../models/UserToken"); // userToken -- stores all USers' Tokens -----
-const UserToken = require("../models/UserToken");
 
 const router = express.Router();
 
@@ -25,12 +24,25 @@ const REDIRECT_URI = process.env.SPOTIFY_REDIRECT_URI;
           > directs user to login eednpoint to auuthorizre app */
 
 router.get("/login", (req, res) => {
+  console.log("Login route -- reached ---");
+
+  // i forgot to actually check for my env Vars!! ---- facepalm....
+  // verifying creds/ vars are available
+  if (!CLIENT_ID || !REDIRECT_URI) {
+    // log errors
+    console.error("Missing Spotify env. vars ---- ");
+    // res.satus coode
+    return res
+      .status(500)
+      .json({ error: "Missing Spotify env. vars ------- " });
+  }
   // authenticatign user prfile and returning auth code
   const scope = "user-read-private user-read-email"; // req. acess to user profile + email
 
   // redirected login endpoint ---- w/ vars. params
   const authUrl = `${SPOTIFY_AUTH_URL}?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${REDIRECT_URI}&scope=${scope}`;
-
+  // Log auth URL -----
+  console.log("Redirecting to:", authUrl);
   res.redirect(authUrl); // Redircts user ---> Spotify login
 });
 
