@@ -1,7 +1,7 @@
 const express = require("express");
 const axios = require("axios");
 require("dotenv").config();
-const userToken = require("../models/UserToken"); // userToken -- stores all USers' Tokens -----
+const UserToken = require("../models/UserToken"); // userToken -- stores all USers' Tokens -----
 
 const router = express.Router();
 
@@ -76,10 +76,16 @@ router.get("/callback", async (req, res) => {
    */
 
   try {
+    // log erprr -----------
+    console.error("Making req to Sptify API ------");
+    console.error("Auth Routes:", authReq.toString());
+    // --------------
     const response = await axios.post(SPOTIFY_TOKEN_URL, authReq, {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
     });
 
+    // eror log -----
+    console.error("Spotify Res:", response.data);
     const { access_token, refresh_token, expires_in } = response.data;
 
     // Save tokens to MongoDB -----------
