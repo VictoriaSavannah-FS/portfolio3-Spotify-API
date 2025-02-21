@@ -17,7 +17,9 @@ const DATABASE_URL = process.env.DATABASE_URL;
 
 //mongoose - env. variabels ---- DATABAASE
 
-mongoose.connect(DATABASE_URL, {});
+mongoose.connect(DATABASE_URL, {
+  tls: true,
+});
 const db = mongoose.connection;
 // error log----
 db.on("error", (error) => console.error(error));
