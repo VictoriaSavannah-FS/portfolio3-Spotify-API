@@ -13,10 +13,12 @@ app.use(express.json());
 //PROT setup    -----
 const PORT = process.env.PORT || 8000; //|| heroku...
 
-const DATABASE_URL = process.env.DATABASE_URL; //mongoose - env. variabels ---- DATABAASE
+const DATABASE_URL = process.env.DATABASE_URL;
+
+//mongoose - env. variabels ---- DATABAASE
 
 mongoose.connect(DATABASE_URL, {
-  // tls: true,
+  tls: true,
 });
 const db = mongoose.connection;
 // error log----
@@ -31,10 +33,12 @@ db.once("open", () =>
 // ROUTES -------------
 const authRouter = require("./routes/authRoutes"); // Import authRoutes
 app.use("/auth", authRouter); // use authRoutes
-
-const artistRouter = require("./routes/artistRoutes");
+// User API ROUTES ----
+const apiRouter = require("./routes/apiRoutes");
+app.use("/spotify", apiRouter);
+// const artistRouter = require("./routes/artistRoutes");
 // everytioes we go to base url --- artists
-app.use("/artists", artistRouter);
+// app.use("/artists", artistRouter);
 
 // listeners
 
