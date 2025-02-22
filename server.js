@@ -13,9 +13,7 @@ app.use(express.json());
 //PROT setup    -----
 const PORT = process.env.PORT || 8000; //|| heroku...
 
-const DATABASE_URL = process.env.DATABASE_URL;
-
-//mongoose - env. variabels ---- DATABAASE
+const DATABASE_URL = process.env.DATABASE_URL; //mongoose - env. variabels ---- DATABAASE
 
 mongoose.connect(DATABASE_URL, {
   // tls: true,
