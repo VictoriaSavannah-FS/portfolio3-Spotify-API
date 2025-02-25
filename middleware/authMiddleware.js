@@ -12,10 +12,17 @@ const authHandler = async (req, res, next) => {
     // conditonal to hdnle res.
     if (!validToken || !validToken.access_token) {
       // log errors
-      console.error("Problem validating token", validToken);
+      console.error("Problem validating token ---- ", validToken);
       return res
         .status(401)
         .json({ error: "Could NOT validate User Token - ACCESS DENIED" });
+    }
+    // Checknf if EXPIRED ---------------
+    if (new Date() > validToken.expires_at) {
+      //logError
+      console.error("Problem --- Access Token EXPIRED. Refresh --- ");
+      //res.Statuis
+      return res.status(401).json({ error: "Access Token is EXPIRED --- " });
     }
     // take res. --> pass to erq. object
     req.access_token = validToken.access_token;

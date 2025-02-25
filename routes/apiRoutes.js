@@ -12,7 +12,7 @@ const SPOTIFY_API_BASE_URL = "https://api.spotify.com/v1";
 - create Routes to: GET MTHD
     1. Spotify PRofile 0--- /spotify/ user
     2.playlslists---- /spotify/
-    3. Albums
+    3. Top Tracsk Albums
 
 */
 
