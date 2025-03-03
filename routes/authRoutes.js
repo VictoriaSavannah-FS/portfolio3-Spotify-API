@@ -78,7 +78,7 @@ router.get("/callback", async (req, res) => {
   try {
     // log erprr -----------
     console.error("Making req to Sptify API ------");
-    console.error("Auth Routes:", authReq.toString());
+    // console.error("Auth Routes:", authReq());
     // --------------
     const response = await axios.post(SPOTIFY_TOKEN_URL, authReq, {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -97,8 +97,11 @@ router.get("/callback", async (req, res) => {
       refresh_token,
       expires_at: expiresAt,
     });
+    // log stats
+    console.log("---- Tokens stored successfully in DB---- ");
 
     res.json(response.data); //prse JSON data-> retunr to user | Acess TOken data--> user
+    // redirect to frontend??  ----
   } catch (error) {
     console.error("Error EXHANGING code:", error.message);
     res.status(500).json({ error: "Failed to get access token" });

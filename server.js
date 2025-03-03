@@ -3,11 +3,21 @@ const express = require("express");
 require("dotenv").config(); //local config -> look for our envs. during builds
 // dev dependencies ------
 const mongoose = require("mongoose");
-const path = require("path");
+// const path = require("path");
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+
+// fiixng CORS isseu -----
+// app.use(cors());
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "http://localhost:5173", //iwll need to UpDate this once deployed to Vervce-------
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+  })
+);
 // parse json req.s
 app.use(express.json());
 //PROT setup    -----

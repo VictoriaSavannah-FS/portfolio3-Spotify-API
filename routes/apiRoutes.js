@@ -7,6 +7,31 @@ const authHandler = require("../middleware/authMiddleware");
 
 const router = express.Router();
 const SPOTIFY_API_BASE_URL = "https://api.spotify.com/v1";
+const SPOTIFY_AUTH_URL = "https://accounts.spotify.com/authorize";
+const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
+const REDIRECT_URI = process.env.SPOTIFY_REDIRECT_URI;
+
+// Login w/ spotfy--> redirects users to login Page
+
+router.get("/auth/login", (req, res) => {
+  console.log("Login route: Spotify endpoint!");
+
+  if (!CLIENT_ID || !REDIRECT_URI) {
+    return res.status(500).json({ error: "Missing Spotify env. vars" });
+  }
+  // othr params
+  const scope = "user-read-private user-read-email";
+  const authUrl = `${SPOTIFY_AUTH_URL}?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${REDIRECT_URI}&scope=${scope}`;
+
+  // console.log("created new Auth URL:", authUrl);
+
+  // // no redirecting-->  returnz  URL
+  // res.json({ url: authUrl });
+  // Yes--> to directing! Loign PAPge----
+  console.log("Redirecting to:", authUrl);
+  // send user to logiin login pape
+  res.redirect(authUrl);
+});
 
 /*TO DO: 
 - create Routes to: GET MTHD
@@ -16,34 +41,7 @@ const SPOTIFY_API_BASE_URL = "https://api.spotify.com/v1";
 
 */
 
-//GET Users Profile ------------ will chek for Valid Acss Token
-// add middleware ------
-// router.get("/user", async (req, res) => {
-//   // trycatch block- handle erors and status updates ----
-//   try {
-//     //check for currentt access token - still valid? -- fetch most recent / current
-//     const validToken = await UserToken.findOne().sort({ created_at: -1 });
-//     // conditonal to hdnle res.
-//     if (!validToken || !validToken.access_token) {
-//       // log errors
-//       console.error("Problem validating token", validToken);
-//       return res
-//         .status(401)
-//         .json({ error: "Could NOT validate User Token - ACCESS DENIED" });
-//     }
-//     // fetch user data from Spotify API to get user profile
-//     const response = await axios.get(`${SPOTIFY_API_BASE_URL}/me`, {
-//       headers: { Authorization: `Bearer ${validToken.access_token}` },
-//     });
-
-//     res.json(response.data); // snd back res. user profile data
-//   } catch (error) {
-//     //    log errros
-//     console.error("Error -- failed to fetch user data", error.message);
-//     res.status(500).json({ error: "Failed -- could not fetch user data" });
-//   }
-// });
-router.get("/user", authHandler, async (req, res) => {
+router.get("/spotify/user", authHandler, async (req, res) => {
   // trycatch block- handle erors and status updates ----
   try {
     // fetch user data from Spotify API to get user profile
@@ -59,14 +57,17 @@ router.get("/user", authHandler, async (req, res) => {
 });
 
 // GET USER PLAYLISTS --// add middleware ------
-router.get("/playlists", authHandler, async (req, res) => {
+router.get("/spotify/playlists", authHandler, async (req, res) => {
   // trycatch block- handle erors and status updates ----
   try {
     // fetch user data from Spotify API to get user profile
-    const response = await axios.get(`${SPOTIFY_API_BASE_URL}/me/playlists`, {
-      //   headers: { Authorization: `Bearer ${validToken.access_token}` },//update w/ correct authHandler res. value
-      headers: { Authorization: `Bearer ${req.access_token}` },
-    });
+    const response = await axios.get(
+      `${SPOTIFY_API_BASE_URL}/me/playlists?limit=5`,
+      {
+        //   headers: { Authorization: `Bearer ${validToken.access_token}` },//update w/ correct authHandler res. value
+        headers: { Authorization: `Bearer ${req.access_token}` },
+      }
+    );
     res.json(response.data); // snd back res
   } catch (error) {
     //    log errros
@@ -76,7 +77,7 @@ router.get("/playlists", authHandler, async (req, res) => {
 });
 
 // GET User TOp TRacks ------// add middleware ------
-router.get("/top-tracks", authHandler, async (req, res) => {
+router.get("/spotify/top-tracks", authHandler, async (req, res) => {
   // trycatch block- handle erors and status updates ----
   try {
     // fetch user data from Spotify API to get user profile
