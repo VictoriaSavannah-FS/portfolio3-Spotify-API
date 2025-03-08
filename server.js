@@ -1,23 +1,20 @@
 // setting up local server
 const express = require("express");
-require("dotenv").config(); //local config -> look for our envs. during builds
-// dev dependencies ------
+require("dotenv").config();
+
 const mongoose = require("mongoose");
-// const path = require("path");
-const cors = require("cors");
 
 const app = express();
-
 // fiixng CORS isseu -----
-// app.use(cors());
 const cors = require("cors");
 app.use(
   cors({
-    origin: "http://localhost:5173", //iwll need to UpDate this once deployed to Vervce-------
+    origin: process.env.FRONTEND_URL, //Only frontend req. ---
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   })
 );
+
 // parse json req.s
 app.use(express.json());
 //PROT setup    -----
@@ -46,6 +43,8 @@ app.use("/auth", authRouter); // use authRoutes
 // User API ROUTES ----
 const apiRouter = require("./routes/apiRoutes");
 app.use("/spotify", apiRouter);
+app.use("/", apiRouter);
+
 // const artistRouter = require("./routes/artistRoutes");
 // everytioes we go to base url --- artists
 // app.use("/artists", artistRouter);

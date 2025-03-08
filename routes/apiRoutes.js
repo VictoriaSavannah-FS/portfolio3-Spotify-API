@@ -19,14 +19,13 @@ router.get("/auth/login", (req, res) => {
   if (!CLIENT_ID || !REDIRECT_URI) {
     return res.status(500).json({ error: "Missing Spotify env. vars" });
   }
-  // othr params
+  // othr paramss
   const scope = "user-read-private user-read-email";
-  const authUrl = `${SPOTIFY_AUTH_URL}?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${REDIRECT_URI}&scope=${scope}`;
-
+  const authUrl = `${SPOTIFY_AUTH_URL}?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${encodeURIComponent(
+    REDIRECT_URI
+  )}&scope=${encodeURIComponent(scope)}`;
   // console.log("created new Auth URL:", authUrl);
 
-  // // no redirecting-->  returnz  URL
-  // res.json({ url: authUrl });
   // Yes--> to directing! Loign PAPge----
   console.log("Redirecting to:", authUrl);
   // send user to logiin login pape
@@ -81,10 +80,12 @@ router.get("/spotify/top-tracks", authHandler, async (req, res) => {
   // trycatch block- handle erors and status updates ----
   try {
     // fetch user data from Spotify API to get user profile
-    const response = await axios.get(`${SPOTIFY_API_BASE_URL}/me/top/tracks`, {
-      //   headers: { Authorization: `Bearer ${validToken.access_token}` },update with authHandler res.req...
-      headers: { Authorization: `Bearer ${req.access_token}` },
-    });
+    const response = await axios.get(
+      `${SPOTIFY_API_BASE_URL}/me/top/tracks?limit=10`,
+      {
+        headers: { Authorization: `Bearer ${req.access_token}` },
+      }
+    );
 
     res.json(response.data); // snd back res. w/
   } catch (error) {
